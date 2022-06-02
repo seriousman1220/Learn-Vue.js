@@ -1,0 +1,5 @@
+1. The Vue Instance
+- nhúng thư viện vào trong file .html:   
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+- Cách khởi tạo: gần giống angular
+- truyền biến trực tiếp thông qua cặp {{<variable>}}

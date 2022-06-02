@@ -1,0 +1,4 @@
+2. Attribute Binding
+- Có thể bind dữ liệu vào các thẻ trong html, ví dụ thẻ <a> <img>
+- Bind dữ liệu bằng điều khiển (directive): v-bind:href, v-bind:img, v-bind:alt = "<thuộc tính đã khai báo trong data của file js>" 
+- Có thể viết :img="<link ảnh>" để ngắn hơn
