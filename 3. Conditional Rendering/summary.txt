@@ -1,0 +1,4 @@
+3. Conditional Rendering
+- có thể dùng các điều kiện so sánh, true, false để có thể xuất ra các thẻ html
+- khai báo các thuộc tính trong data, rồi áp dụng điều kiện trong các thẻ qua directive v-if, v-else, v-else-if
+- có thể ẩn hiện các thẻ qua các điều kiện so sánh bằng directive v-show = "<điều kiện>"
