@@ -1,0 +1,43 @@
+8. Components
+- VueJS hỗ trợ tạo components (thành phần). Phần html có khả năng lặp lại, hoặc muốn nó làm quy chuẩn sẽ biến
+nó thành components.
+B1: Khai báo components:
+    Vue.components('product', {});
+- Tham số đầu là tên thành phần, tham số thứ 2 là obj tuỳ chỉnh, tương tự như khi khai báo Vue 
+- Khi khai báo Vue, ta dùng el để truyền vào html. Với components, ta dùng "template" để chỉ đích danh phần
+HTML làm thành phần
+- Bên trong tham số 2, ta thêm template(html) vào, để trong cặp dấu ` ` (back tick)
+- Template cần nằm trong 1 cặp element, ví dụ 1 cặp div, 1 cặp h1. Giả sử có 2 cặp thẻ h1, h2 riêng biệt thì
+Vue lập tức báo lỗi
+- Sau khi hoàn thành components, ta thêm các phần mở rộng như trong Vue cơ bản như:
+Vue.components('product', {
+    template: `
+        <div class="product">
+            ........
+            //code goes here...
+        </div>
+        `,
+        data(){
+            return{
+                //data goes here...
+            }
+        },
+        methods:{
+            //methods goes here...
+        }
+        computed:{
+            //computed properties goes here...
+        }
+})
+
+- chú ý: data trở thành function data(). Vậy nên mỗi components sẽ có data riêng. Giả sử data không là function,
+thì các components sẽ dùng chung data, trái với mục đích tái sử dụng các components với các data và chức năng riêng.
+- khi đó, root instance sẽ gọn hơn, cụ thể:
+    var app = new Vue({
+        el: 'app'
+        
+- Bên file .html:
+    <div id="app">
+        <product></product>
+    </div>
+- VueJS sẽ render các components, data đã có dưới tên product ra màn hình
