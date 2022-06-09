@@ -6,7 +6,27 @@ Vue.component("product", {
     },
   },
   template: `
-    <div class="product">
+    <div class="product">  
+        <product-details></product-details>
+        <p>Premium? {{premium}}</p>
+        <p>Shipping? {{shipping}}</p>   
+    </div>
+    `,
+
+  computed: {
+    shipping() {
+      if (this.premium) {
+        return "Free";
+      } else {
+        return 30000;
+      }
+    },
+  },
+});
+
+Vue.component("product-details", {
+  template: `
+    <div class="product-details">
             <div class="product-image">
                 <img :src="image" alt="" width="100" height="150">
             </div>
@@ -25,11 +45,10 @@ Vue.component("product", {
                 <div class="cart">
                     <button type="button" v-on:click="addToCart">Add to Cart</button>
                     <p>Cart({{cart}})</p>
-                    <p>Premium? {{premium}}</p>
-                    <p>Shipping? {{shipping}}</p>
+                    
                 </div>
             </div>
-        </div>
+    </div>
     `,
   data() {
     return {
@@ -65,16 +84,6 @@ Vue.component("product", {
       this.cart += 1;
     },
   },
-  computed:{
-      shipping(){
-        if(this.premium){
-            return "Free";
-      }
-      else{
-          return 30000;
-      }
-      }
-  }
 });
 
 var app = new Vue({
